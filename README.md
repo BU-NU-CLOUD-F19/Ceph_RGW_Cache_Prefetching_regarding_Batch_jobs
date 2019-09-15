@@ -1,59 +1,87 @@
-# Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs
-
-The purpose of this Project Description is to present the ideas proposed and decisions made during the preliminary envisioning and inception phase of the project. The goal is to analyze an initial concept proposal at a strategic level of detail and attain/compose an agreement between the project team members and the project customer (mentors and instructors) on the desired solution and overall project direction.
-
-This template proposal contains a number of sections, which you can edit/modify/add/delete/organize as you like.  Some key sections we’d like to have in the proposal are:
-
-- Vision: An executive summary of the vision, goals, users, and general scope of the intended project.
-
-- Solution Concept: the approach the project team will take to meet the business needs. This section also provides an overview of the architectural and technical designs made for implementing the project.
-
-- Scope: the boundary of the solution defined by itemizing the intended features and functions in detail, determining what is out of scope, a release strategy and possibly the criteria by which the solution will be accepted by users and operations.
-
-Project Proposal can be used during the follow-up analysis and design meetings to give context to efforts of more detailed technical specifications and plans. It provides a clear direction for the project team; outlines project goals, priorities, and constraints; and sets expectations.
-
-** **
+# Ceph RGW Cache Prefetching regarding Batch jobs
 
 ## 1.Vision and Goals Of The Project:
 
-The vision section describes the final desired state of the project once the project is complete. It also specifies the key goals of the project. This section provides a context for decision-making. A shared vision among all team members can help ensuring that the solution meets the intended goals. A solid vision clarifies perspective and facilitates decision-making.
+MapReduce is a programming model which is widely used in tackling huge data sets by distributing processing across many nodes, and then reducing the results of those nodes. But each MapReduce operation is independent of each other. While in Spark, a DAG(Directed Acyclic Graph) of consecutive computation stages is formed. This DAG could be used for future data usage prediction and prefetching to increase the operation efficiency. High level goals of this project include:
 
-The vision statement should be specific enough that you can look at a proposed solution and say either "yes, this meets the vision and goals", or "no, it does not".
+ -   Generate directed acyclic graph (DAG) by DAG Scheduler in Spark
+
+-   Create software to perform the prediction of which data will be  
+    accessed in the future based on DAG.
+    
+-   Prefetch data by using prefetching commands (Ceph prefetching API) in  Ceph Rados Gateway (RGW) to improve the computing speed of batch jobs in Spark.
+
+-   Performance test: Comparing efficiency (running time) of batch jobs between with/without prefetching the data.
 
 ## 2.Users/Personas Of The Project:
 
-This section describes the principal user roles of the project together with the key characteristics of these roles. This information will inform the design and the user scenarios. A complete set of roles helps in ensuring that high-level requirements can be identified in the product backlog.
-
-Again, the description should be specific enough that you can determine whether user A, performing action B, is a member of the set of users the project is designed for.
-
-** **
-
+Ceph RGW Cache prefetching will be used not only by RedHat staff, but also by developers of big-data enterprises as an open source solution for cloud speedup.
 ## 3.Scope and Features Of The Project:
 
-The Scope places a boundary around the solution by detailing the range of features and functions of the project. This section helps to clarify the solution scope and can explicitly state what will not be delivered as well.
+-   Obtain the DAG of jobs and files out of Hive apps.
 
-It should be specific enough that you can determine that e.g. feature A is in-scope, while feature B is out-of-scope.
+-   Prefetch the data into cache based on the DAG.
 
-** **
+-   Implement performance test application to analyze the result.
 
 ## 4.Solution Concept
 
-This section provides a high-level outline of the solution.
+### Global Architectural Structure Of the Project and a Walkthrough
 
-Global Architectural Structure Of the Project:
+Below is a description of the system components that are building blocks of the architectural design
+-   Hive application: application to generate DAG
 
-This section provides a high-level architecture or a conceptual diagram showing the scope of the solution. If wireframes or visuals have already been done, this section could also be used to show how the intended solution will look. This section also provides a walkthrough explanation of the architectural structure.
+-   Ceph: Ceph stores data as objects within logical storage pools. Using the CRUSH algorithm, Ceph calculates which placement group should contain the object, and further calculates which Ceph OSD Daemon should store the placement group. The CRUSH algorithm enables the Ceph Storage Cluster to scale, rebalance, and recover dynamically.
 
+-   Prefetching mechanism (User-directed prefetching): User will send a special header in the normal GET request and upon receiving this request, RGW should prefetch the data into the cache and reply the user with success message
 
-Design Implications and Discussion:
+-   Rados Gateway (RGW): The S3/Swift gateway component of Ceph.
 
-This section discusses the implications and reasons of the design decisions made during the global architecture design.
+-   Object storage device (OSD): A physical or logical storage unit
+
+### Design Implications and Discussion
+Key design decisions and motivation behind them.
+
+-   Spark: Apache Spark is a powerful open source engine that provides real-time stream processing, interactive processing, graph processing, in-memory processing as well as batch processing with very fast speed, ease of use and standard interface.
+
+-   Hive: Apache Hive saves developers from writing complex Hadoop MapReduce jobs for ad-hoc requirements. Hence, hive provides summarization, analysis, and query of data. Hive is very fast and scalable. It is highly extensible. Since Apache Hive is similar to SQL, hence it becomes very easy for the SQL developers to learn and implement Hive Queries.
+
+-   Why not using Hadoop and MapReduce:
+
+1.  The MapReduce result need to be saved to disk in Hadoop. While Spark puts intermediate data into memory. The iteration operations of Spark are more efficient.
+
+2.  Spark introduces Resilient Distributed Dataset(RDD), which ensures higher fault tolerance than Hadoop.
+
+3.  Hive queries are converted to MapReduce programs in the background. This helps developers focus more on the business problem rather than focus on complex programming language logic.
 
 ## 5.Acceptance criteria
 
 This section discusses the minimum acceptance criteria at the end of the project and stretch goals.
 
 ## 6.Release Planning:
+### Sprint 1: 9/16 - 9/30
 
-Release planning section describes how the project will deliver incremental sets of features and functions in a series of releases to completion. Identification of user stories associated with iterations that will ease/guide sprint planning sessions is encouraged. Higher level details for the first iteration is expected.
+-   Have Spark, Hive and Ceph up and running。
+    
+-   Understand the prefetching interface.
+    
+-   write a Hive application.
+    
 
+### Sprint 2: 10/7 - 10/21
+
+-   Run TPC-DS/TPC-H benchmarks, get into Spark and Hive code to generate the DAG, extract DAG information out of results,
+    
+
+### Sprint 3: 10/28 - 11/11
+
+-   Do prefetching using the information gotten from the DAG and the Prefetching API of Ceph
+    
+
+### Sprint 4: 11/18 - 12/2
+
+-   Performance tests
+    
+-   Analyze results
+    
+-   Presentation
