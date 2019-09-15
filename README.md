@@ -23,6 +23,8 @@ Ceph RGW Cache prefetching will be used not only by RedHat staff, but also by de
 
 ## 4.Solution Concept
 
+![design](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/doc/Design.jpg)
+
 Below is a description of the system components that are building blocks of the architectural design
 
 - Hive application: application to generate DAG
