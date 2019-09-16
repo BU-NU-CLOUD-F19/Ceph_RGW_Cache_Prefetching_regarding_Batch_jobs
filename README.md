@@ -58,7 +58,7 @@ Key design decisions and motivation behind them.
 
   3. Hive queries are converted to MapReduce programs in the background. This helps developers focus more on the business problem rather than focus on complex programming language logic.
 
-## 5. Acceptance criteria
+## 5. Acceptance Criteria
 
 - The MVP is having a certain degree of acceleration with prefetching mechanism running common benchmarks. (e.g. TPC-DS/TPC-H) as well as other common jobs.
 
