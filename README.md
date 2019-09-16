@@ -1,6 +1,6 @@
 # Ceph RGW Cache Prefetching regarding Batch jobs
 
-## 1.Vision and Goals Of The Project:
+## 1. Vision and Goals Of The Project:
 
 MapReduce is a programming model which is widely used in tackling huge data sets by distributing processing across many nodes, and then reducing the results of those nodes. But each MapReduce operation is independent of each other. While in Spark, a DAG(Directed Acyclic Graph) of consecutive computation  stages is formed. This DAG could be used for future data usage prediction and prefetching to increase the operation efficiency. High level goals of this project include:
 
@@ -14,11 +14,11 @@ MapReduce is a programming model which is widely used in tackling huge data sets
 
 - Performance test: Comparing efficiency (running time) of batch jobs between with/without prefetching the data. 
 
-## 2.Users/Personas Of The Project:
+## 2. Users/Personas Of The Project:
 
 Ceph RGW Cache prefetching will be used not only by RedHat staff, but also by developers of big-data enterprises as an open source solution for cloud speedup.
 
-## 3.Scope and Features Of The Project:
+## 3. Scope and Features Of The Project:
 
 - Obtain the DAG of jobs and files out of Hive apps.
 
@@ -26,7 +26,7 @@ Ceph RGW Cache prefetching will be used not only by RedHat staff, but also by de
 
 - Implement performance test application to analyze the result.
 
-## 4.Solution Concept
+## 4. Solution Concept
 
 ![design](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/Design.jpg)
 
@@ -58,13 +58,13 @@ Key design decisions and motivation behind them.
 
   3. Hive queries are converted to MapReduce programs in the background. This helps developers focus more on the business problem rather than focus on complex programming language logic.
 
-## 5.Acceptance criteria
+## 5. Acceptance criteria
 
-The MVP is having a certain degree of acceleration with prefetching mechanism running common benchmarks. (e.g. TPC-DS/TPC-H) as well as other common jobs.
+- The MVP is having a certain degree of acceleration with prefetching mechanism running common benchmarks. (e.g. TPC-DS/TPC-H) as well as other common jobs.
 
-## 6.Release Planning:
+## 6. Release Planning:
 
-### Sprint 1: 9/16 - 9/30
+### Sprint 1: 9/16 - 10/6 
 
 -   Have Spark, Hive and Ceph up and running。
     
@@ -72,12 +72,12 @@ The MVP is having a certain degree of acceleration with prefetching mechanism ru
     
 -   write a Hive application.
     
-### Sprint 2: 10/7 - 10/21
+### Sprint 2: 10/7 - 10/27
 
 -   Run TPC-DS/TPC-H benchmarks, get into Spark and Hive code to generate the DAG, extract DAG information out of results,
     
 
-### Sprint 3: 10/28 - 11/11
+### Sprint 3: 10/28 - 11/17
 
 -   Do prefetching using the information gotten from the DAG and the Prefetching API of Ceph
     
