@@ -62,6 +62,8 @@ Key design decisions and motivation behind them.
 
 - The MVP is having a certain degree of acceleration with prefetching mechanism running common benchmarks. (e.g. TPC-DS/TPC-H) as well as other common jobs.
 
+- The stretch goal is to find a common way of creating job dependecy paths to accelerate computing speed of Hive applications. 
+
 ## 6. Release Planning:
 
 ### Sprint 1: 9/16 - 10/6 
@@ -70,7 +72,7 @@ Key design decisions and motivation behind them.
     
 -   Understand the prefetching interface.
     
--   write a Hive application.
+-   Wite a Hive application.
     
 ### Sprint 2: 10/7 - 10/27
 
