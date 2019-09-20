@@ -5,12 +5,13 @@
 - **Spark** is a high-performance open source data processing engine that can perform batch processing. 
 - **Hive** is is a data warehouse framework for querying and analysis of data that is stored in HDFS.
 - **DAG** (Directed Acyclic Graph)[ ](http://data-flair.training/blogs/apache-spark-tutorial/)is a set of Vertices and Edges, where vertices represent the RDDs(Resilient Distributed Dataset, a fundamental data structure in Spark) and the edges represent the Operation to be applied on RDD.
+- **Ceph** is an open source storage platform, which implements object storage on a single distributed computer cluster, and provides interfaces for object-, block- and file-level storage. 
+
+![DAG](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/DAG.jpg)
 
 ### Goal of this project
 
 When developer using Spark to deal with batch jobs, the jobs are done in sequence which means one job cannot start until all of its dependencies are done. We want to establish a mechanism to extract the dependencies and prefetch the data from Ceph RGW beforehand so that the overall runtime can be speed up.
-
-![DAG](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/DAG.jpg)
 
 ## 2. Users/Personas Of The Project:
 
@@ -52,16 +53,6 @@ Below is a description of the system components that are building blocks of the 
 - Prefetch data by using prefetching commands (Ceph prefetching API) in
      Ceph Rados Gateway (RGW) to improve the computing speed of batch jobs in Spark.
 - Performance test: Comparing efficiency (running time) of batch jobs between with/without prefetching the data. 
-
-### Spark:
-
-Apache Spark is a powerful open source engine that provides real-time stream processing, interactive processing, graph processing, in-memory processing as well as batch processing with very fast speed, ease of use and standard 
-
-### Hive:
-
-Apache Hive saves developers from writing complex Hadoop MapReduce jobs for ad-hoc requirements. Hence, hive provides summarization, analysis, and query of data. Hive is very fast and scalable. It is highly extensible. Since Apache Hive is similar to SQL, hence it becomes very easy for the SQL developers to learn and implement Hive Queries.
-
-### Ceph RGW:
 
 ## 5. Acceptance Criteria
 
