@@ -90,3 +90,15 @@ Key design decisions and motivation behind them.
 -   Analyze results
     
 -   Presentation
+
+
+
+
+
+
+comments:
+How does this project impact the operational efficiency?  Do you just mean performance? What does it mean "Create software to perform the prediction of which data will be accessed in the future based on DAG"? Are you developing a library?  Are you modifying a MapReduce framework, this is very unclear. We are very confused by the project description, what does this have to do with MapReduce?  IF this is layered on top of Hive/Spark, where are you writing the code, is it modifications to Spark or to Hive? Where are you extracting the DAG from? The users/persons are broken, I think you mean that this is just a component that will be used by Hive or spark, and it will just have performance implications for end users, but its all very unclear. 
+
+user/persona is all wrong - it should be transparent for existing Spark users, and run faster. “Design implications and discussion” doesn’t seem to make sense - these are high-level issues which were considered before the mentor formulated the project, rather than issues facing your team.
+
+
