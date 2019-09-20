@@ -32,21 +32,14 @@ Accelerate the computation speed of batch jobs by prefetching data from file sys
 
 ## 4. Solution Concept
 
-![design](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/Design.png)
-
 ### Global Architectural Structure Of the Project and a Walkthrough:
+
+![design](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/Design.png)
 
 Below is a description of the system components that are building blocks of the architectural design
 
-- Hive application: application to generate DAG
-
-- Ceph: Ceph stores data as objects within logical storage pools. Using the CRUSH algorithm, Ceph calculates which placement group should contain the object, and further calculates which Ceph OSD Daemon should store the placement group. The CRUSH algorithm enables the Ceph Storage Cluster to scale, rebalance, and recover dynamically.
-
+- DAG generation mechanism: Application will generate DAG out of querys input by users
 - Prefetching mechanism (User-directed prefetching): User will send a special header in the normal GET request and upon receiving this request, RGW should prefetch the data into the cache and reply the user with success message
-
-- Rados Gateway (RGW): The S3/Swift gateway component of Ceph.
-
-- Object storage device (OSD): A physical or logical storage unit
 
 ### Design Implications and Discussion:
 
