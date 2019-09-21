@@ -12,6 +12,8 @@
 
 - **Ceph** is an open source storage platform, which implements object storage on a single distributed computer cluster, and provides interfaces for object-, block- and file-level storage. 
 
+- **RGW**(RADOS Gateway) is an object storage interface built on top of OSDs(Ceph Distributed Storage) to provide applications with the location of data in clusters.
+
 ### Goal of this project
 
 When developer using Spark to deal with batch jobs, the jobs are done in sequence which means one job cannot start until all of its dependencies are done. We want to establish a mechanism to extract the dependencies and prefetch the data from Ceph RGW into cache beforehand so that the overall runtime can be speed up.
