@@ -26,11 +26,12 @@ Accelerate the computation speed of batch jobs by prefetching data from file sys
 
 ## 3. Scope and Features Of The Project:
 
-- Obtain the DAG of jobs and files out of Hive apps.
+This project provides an efficient mechanism to accelerate  Spark application running time by prefetching batch jobs data into cache. Below is an overview of the project features:
 
-- Prefetch the data into cache based on the DAG.
+- Create the DAG of operations and data from user’s Spark applications.
 
-- Implement performance test application to analyze the result.
+- Prefetch the data from OSDs into cache based on the DAG.
+
 
 ## 4. Solution Concept
 
@@ -54,7 +55,7 @@ Below is a description of the system components that are building blocks of the 
 
 ## 5. Acceptance Criteria
 
-- The MVP is having a certain degree of acceleration with prefetching mechanism running common benchmarks. (e.g. TPC-DS/TPC-H) as well as other common jobs.
+- The MVP is demonstrating speed improvements with our prefetching mechanism using common benchmarks. (e.g. TPC-DS/TPC-H) as well as other common jobs.
 
 
 ## 6. Release Planning:
