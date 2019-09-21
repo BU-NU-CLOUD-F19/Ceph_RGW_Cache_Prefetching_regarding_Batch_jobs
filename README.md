@@ -14,7 +14,7 @@
 
 ### Goal of this project
 
-When developer using Spark to deal with batch jobs, the jobs are done in sequence which means one job cannot start until all of its dependencies are done. We want to establish a mechanism to extract the dependencies and prefetch the data from Ceph RGW beforehand so that the overall runtime can be speed up.
+When developer using Spark to deal with batch jobs, the jobs are done in sequence which means one job cannot start until all of its dependencies are done. We want to establish a mechanism to extract the dependencies and prefetch the data from Ceph RGW into cache beforehand so that the overall runtime can be speed up.
 
 ## 2. Users/Personas Of The Project:
 
