@@ -8,7 +8,7 @@
 
 - **DAG** (Directed Acyclic Graph)[ ](http://data-flair.training/blogs/apache-spark-tutorial/)is a set of Vertices and Edges, where vertices represent the RDDs(Resilient Distributed Dataset, a fundamental data structure in Spark) and the edges represent the Operation to be applied on RDD.
 
-  ![DAG](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/DAG.png)
+  ![DAG](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/DAG.jpg)
 
 - **Ceph** is an open source storage platform, which implements object storage on a single distributed computer cluster, and provides interfaces for object-, block- and file-level storage. 
 
