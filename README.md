@@ -61,7 +61,7 @@ Below is a description of the system components that are building blocks of the 
 
 ### Sprint 1: 9/16 - 10/6 
 
--   Have Spark, Hive and Ceph up and running。
+-   Set up infrastructures (make Spark, Hive and Ceph running)on VMs.
   
 -   Understand the prefetching interface.
   
@@ -84,6 +84,9 @@ Below is a description of the system components that are building blocks of the 
   
 -   Presentation
 
+## 7. Open Questions & Risks
+
+- How to find the DAG(dependencies) of batch jobs? This is the core issue of this project.
 
 
 
