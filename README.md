@@ -1,5 +1,5 @@
 # Ceph RGW Cache Prefetching regarding Batch jobs
-[Sprint 1 presentation] (https://docs.google.com/presentation/d/1Wu4Z7c8MkjNF0_733TzDGl1x2EopEmEqpkTrnMzqN3k/edit#slide=id.p)
+[Sprint 1 presentation](https://docs.google.com/presentation/d/1Wu4Z7c8MkjNF0_733TzDGl1x2EopEmEqpkTrnMzqN3k/edit#slide=id.p)
 ## 1. Vision and Goals Of The Project:
 
 - **Spark** is a high-performance open source data processing engine that can perform batch processing. 
