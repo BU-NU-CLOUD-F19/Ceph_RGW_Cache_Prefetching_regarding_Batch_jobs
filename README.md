@@ -30,7 +30,10 @@ This project provides an efficient mechanism to accelerate  Spark application ru
 
 - Create the DAG of operations and data from user’s Spark applications.
 
+— According to the DAG and the use of KARIZ, prefetches data that reduce the runtime the most. 
+
 - Prefetch the data from OSDs into cache based on the DAG.
+
 
 
 ## 4. Solution Concept
@@ -42,6 +45,7 @@ This project provides an efficient mechanism to accelerate  Spark application ru
 Below is a description of the system components that are building blocks of the architectural design
 
 - DAG generation mechanism: Application will generate DAG out of querys input by users
+- KARIZ method: Contains of job output size estimator, job runtime estimator, prefetching per input estimator, and prefetch planner, making the decision of how to prepare cache.
 - Prefetching mechanism (User-directed prefetching): User will send a special header in the normal GET request and upon receiving this request, RGW should prefetch the data into the cache and reply the user with success message
 
 ### Design Implications and Discussion:
@@ -49,6 +53,7 @@ Below is a description of the system components that are building blocks of the 
 - Generate directed acyclic graph (DAG) by DAG Scheduler in Spark
 - Create software to perform the prediction of which data will be
    accessed in the future based on DAG.
+- Use KARIZ that reducing the runtime the most by finding the longest path of the dag.
 - Prefetch data by using prefetching commands (Ceph prefetching API) in
      Ceph Rados Gateway (RGW) to improve the computing speed of batch jobs in Spark.
 - Performance test: Comparing efficiency (running time) of batch jobs between with/without prefetching the data. 
