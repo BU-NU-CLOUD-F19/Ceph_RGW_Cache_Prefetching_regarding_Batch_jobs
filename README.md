@@ -54,8 +54,13 @@ Below is a description of the system components that are building blocks of the 
 - Create software to perform the prediction of which data will be
    accessed in the future based on DAG.
 - Use KARIZ that reducing the runtime the most by finding the longest path of the dag.
-- Prefetch data by using prefetching commands (Ceph prefetching API) in
-     Ceph Rados Gateway (RGW) to improve the computing speed of batch jobs in Spark.
+- The idea of KARIZ:
+  An DAG planner that build prefered cache plans for a signle DAG at the submission time;
+  A cache planner that make decisions for multiple DAG at runtime considering limited bandwidth and limited cache space.
+  Prefetch the cache data partially.
+
+- """Prefetch data by using prefetching commands (Ceph prefetching API) in
+     Ceph Rados Gateway (RGW) to improve the computing speed of batch jobs in Spark."""
 - Performance test: Comparing efficiency (running time) of batch jobs between with/without prefetching the data. 
 
 ## 5. Acceptance Criteria
