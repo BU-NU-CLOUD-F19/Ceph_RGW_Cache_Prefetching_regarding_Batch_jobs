@@ -32,7 +32,7 @@ This project provides an efficient mechanism to accelerate  Spark application ru
 
 - Create the DAG of operations and data from user’s Spark applications.
 
-- According to the DAG and the use of KARIZ, prefetches data that reduce the runtime the most. 
+- According to the DAG and the use of KARIZ, prefetch data that reduce the runtime the most. 
 
 - Prefetch the data from OSDs into cache based on the DAG.
 
