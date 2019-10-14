@@ -41,8 +41,7 @@ This project provides an efficient mechanism to accelerate  Spark application ru
 ## 4. Solution Concept
 
 ### Global Architectural Structure Of the Project and a Walkthrough:
-
-![design](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/Design.png)
+  ![kariz](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/kariz.png)
 
 Below is a description of the system components that are building blocks of the architectural design
 
@@ -61,8 +60,6 @@ Below is a description of the system components that are building blocks of the 
   A DAG planner that build prefered cache plans for a signle DAG at the submission time;
  
   A cache planner that make decisions for multiple DAG at runtime considering limited bandwidth and limited cache space. For each DAG, get the prefetching and caching plans for the their next stage considering their bandwidth share. 
-  
-  ![kariz](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/kariz.png)
 
 - Prefetch data by using prefetching commands (Ceph prefetching API) in
      Ceph Rados Gateway (RGW) to improve the computing speed of batch jobs in Spark.
