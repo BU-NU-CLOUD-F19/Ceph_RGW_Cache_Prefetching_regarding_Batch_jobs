@@ -55,12 +55,12 @@ Below is a description of the system components that are building blocks of the 
 - Generate directed acyclic graph (DAG) by DAG Scheduler in Spark
 - Create software to perform the prediction of which data will be
    accessed in the future based on DAG.
-- Use KARIZ that reducing the runtime the most by finding the longest path of the dag.
+- Use KARIZ that reducing the runtime the most by finding the critical path of the dag.
 - The idea of KARIZ:
-  For each DAG, get the prefetching and caching plans for the their next stage considering their bandwidth share. 
-  An DAG planner that build prefered cache plans for a signle DAG at the submission time;
-  A cache planner that make decisions for multiple DAG at runtime considering limited bandwidth and limited cache space.
-  Prefetch the cache data partially.
+  
+  Two planners: A DAG planner that build prefered cache plans for a signle DAG at the submission time;
+  
+  A cache planner that make decisions for multiple DAG at runtime considering limited bandwidth and limited cache space. For each DAG, get the prefetching and caching plans for the their next stage considering their bandwidth share. 
   
   ![kariz](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/kariz.png)
 
