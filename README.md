@@ -3,7 +3,7 @@
 
 [Sprint 2 presentation](https://docs.google.com/presentation/d/1DTolgI3JfyM3HCCrTtMie6bbcx3SGHGu_B-67uDjoYU/edit#slide=id.p)
 
-[Sprint 1 presentation](https://docs.google.com/presentation/d/1n7PmR-aY--I_aHW3KDkfpajbVTVvKDzvywhq51mLwe8/edit#slide=id.g705ee6c8d7_0_109)
+[Sprint 3 presentation](https://docs.google.com/presentation/d/1n7PmR-aY--I_aHW3KDkfpajbVTVvKDzvywhq51mLwe8/edit#slide=id.g705ee6c8d7_0_109)
 ## 1. Vision and Goals Of The Project:
 
 - **Spark** is a high-performance open source data processing engine that can perform batch processing. 
