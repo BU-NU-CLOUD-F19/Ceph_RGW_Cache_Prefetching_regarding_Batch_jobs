@@ -7,7 +7,7 @@
 
 [Sprint 4 presentation](https://docs.google.com/presentation/d/1Elgr6rXA-xoFwnOammK2Vb-8GB7G5y7CcH37rbB17dc/edit#slide=id.g6ad904b7d2_8_2)
 
-[Sprint 5 presentation](https://docs.google.com/presentation/d/1iN-gZnn5MLgFggXmeUB45YmFmqarpcOAsKt2gkvPSZI/edit#slide=id.g7912a8a4e9_6_0)
+[Sprint 5 presentation](https://drive.google.com/open?id=1iN-gZnn5MLgFggXmeUB45YmFmqarpcOAsKt2gkvPSZI)
 
 ## 1. Vision and Goals Of The Project:
 
