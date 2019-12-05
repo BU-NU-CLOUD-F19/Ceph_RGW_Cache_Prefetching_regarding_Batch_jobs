@@ -140,98 +140,54 @@ In this part we will describe how we implement the system and how to run the pro
   - run create user command: sudo ./bin/radosgw-admin user create --uid=<user id, eg: jay> --display-name=<display name: eg: cloud-user> --access=full --access-key <access key> --secret-key <secret key>
   - run create subuser command: sudo ./bin/radosgw-admin subuser create --uid=<user id, eg: jay> --subuser=jay:swift --access=full
   - After doing this, user can get a json format String in the terminal: 
-  
+  ```yaml
   "user_id": "testuser3",
-  
     "display_name": "Cloud",
-    
     "email": "",
-    
     "suspended": 0,
-    
     "max_buckets": 1000,
-    
     "subusers": [
-    
         {
-        
-            "id": "testuser3:swift",
-            
-            "permissions": "full-control"
-            
-        }
-        
+            "id": "testuser3:swift", 
+            "permissions": "full-control"  
+        } 
     ],
-    
     "keys": [
-    
         {
-        
             "user": "testuser3",
-            
             "access_key": "BAPLVLXYE067O2ZCTRT6",
-            
             "secret_key": "MRt915piNShNY1bW6QtQNIjuTH9lMmK4R5DWU0PR"
-            
         }
-        
     ],
-    
     "swift_keys": [
-    
         {
             "user": "testuser3:swift",
-            
             "secret_key": "27ZMRojp3DA20dHJlTHhimreJzC4FGq9kokfLYGj"
-            
         }
-        
     ],
-    
     "caps": [],
-    
     "op_mask": "read, write, delete",
-    
     "default_placement": "",
-    
     "placement_tags": [],
-    
     "bucket_quota": {
-    
         "enabled": false,
-        
         "check_on_raw": false,
-        
         "max_size": -1,
-        
         "max_size_kb": 0,
-        
         "max_objects": -1
-        
     },
-    
     "user_quota": {
-    
-        "enabled": false,
-        
+        "enabled": false, 
         "check_on_raw": false,
-        
         "max_size": -1,
-        
         "max_size_kb": 0,
-        
         "max_objects": -1
-        
     },
-    
     "temp_url_keys": [],
-    
     "type": "rgw",
-    
     "mfa_ids": []
-    
 }
-
+```
   - Modify corresponding config file /home/centos/ceph-prefetching/Kariz/code/d3n/d3n_cfg.py with right d3n port and d3n key (secret key in swift key)
   
 - **Run Kariz server**
