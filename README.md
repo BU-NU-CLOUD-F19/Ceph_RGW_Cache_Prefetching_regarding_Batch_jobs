@@ -40,8 +40,7 @@ This project provides an efficient mechanism to accelerate  Spark application ru
 
 ## 4. Solution Concept
 
-### Global Architectural Structure Of the Project and a Walkthrough:
-  ![kariz](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/kariz.png)
+  ![system](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/video-demo.jpg)
 
 Below is a description of the system components that are building blocks of the architectural design
 
