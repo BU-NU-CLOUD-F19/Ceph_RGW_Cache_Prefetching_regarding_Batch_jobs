@@ -44,9 +44,11 @@ This project provides an efficient mechanism to accelerate  Spark application ru
 
 Below is a description of the system components that are building blocks of the architectural design
 
-- DAG generation mechanism: Application will generate DAG out of querys input by users
-- KARIZ method: Contains of job output size estimator, job runtime estimator, prefetching per input estimator, and prefetch planner, making the decision of how to prepare cache.
-- Prefetching mechanism (User-directed prefetching): User will send a special header in the normal GET request and upon receiving this request, RGW should prefetch the data into the cache and reply the user with success message
+-Spark: In Spark, there is a fundamental data structure, resilient distributed datasets, is a fault-tolerant collection of elements that can be operated on in parallel. When Spark scheduler initiates the RDDs, we can get the DAG of RDDs by using Internal function of RDD class toDebugString. After we get the DAG String, we send it to Kariz through HTTP POST request to a specific endpoint.
+
+-Kariz: After Kariz get the request with DAG, kariz will interpret the DAG String into a critical path and send it to prefetching planner. The planner will optimize caching for the critical path with longest runtime reduction. Ceph RGW gets the plan with functions in Kariz.
+
+-Ceph: Ceph RGW will prefetch the data and files from ceph clusters into D3N Cache. How can we do that? RGW used prefetch commands based on the prefetch planner mentioned before. Spark will access the data in D3N through s3a commands. So what is s3a? S3 is the AWS object storage system. Ceph has s3 buckets in the Object Storage Devices. S3a is an interface which provides API for connecting Ceph.
 
 ### Design Implications and Discussion:
 
