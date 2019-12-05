@@ -137,8 +137,14 @@ In this part we will describe how we implement the system and how to run the pro
   - pip install connextion flask pandas numpy matplotlib 
 - **User configuration**
   - In ceph VM, go to directory /home/centos/ceph-prefetching/Ceph-RGW-Prefetching/build
-  - run create user command: sudo ./bin/radosgw-admin user create --uid=<user id, eg: jay> --display-name=<display name: eg: cloud-user> --access=full --access-key <access key> --secret-key <secret key>
-  - run create subuser command: sudo ./bin/radosgw-admin subuser create --uid=<user id, eg: jay> --subuser=jay:swift --access=full
+  - run create user command: 
+  ```shell
+  sudo ./bin/radosgw-admin user create --uid=<user id, eg: jay> --display-name=<display name: eg: cloud-user> --access=full --access-key <access key> --secret-key <secret key>
+  ```
+  - run create subuser command: 
+  ```shell
+  sudo ./bin/radosgw-admin subuser create --uid=<user id, eg: jay> --subuser=jay:swift --access=full
+  ```
   - After doing this, user can get a json format String in the terminal: 
   ```yaml
   {
