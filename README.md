@@ -133,10 +133,10 @@ In this part we will describe how we implement the system and how to run the pro
 
   - Download the Kariz code in Kariz branch. It is written with Python3
   
-- # **Dependencies**
+- **Dependencies**
   - pip install connextion flask pandas numpy matplotlib 
   
-- # **Run Kariz server**
+- **Run Kariz server**
   - open file setup.sh and add the code path into your PYTOHN PATH
   - Make sure you would disable your firewall on port 3188 and 3187. Kariz deamon uses port 3188 and cache daemon uses port 3187.
   - Go to ${KARIZ_ROOT}/d3n.api and run ./server.py
