@@ -89,7 +89,7 @@ Below is a description of the system components that are building blocks of the 
 -   Analyze results
 -   Presentation
 
-## 7. Work Flow
+## 7. Workflow
 
 In this part we will describe how we implement the system and how to run the project.
 
