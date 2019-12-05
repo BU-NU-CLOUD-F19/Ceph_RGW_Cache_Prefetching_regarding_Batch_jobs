@@ -62,7 +62,8 @@ Below is a description of the system components that are building blocks of the 
 
 ## 5. Acceptance Criteria
 
-- The MVP is demonstrating speed improvements with our prefetching mechanism using common benchmarks. (e.g. TPC-DS/TPC-H) as well as other common jobs.
+- The MVP is have a system end-to-end test: extract DAG out of Spark Applications; find the job dependency path; generate cache planner 
+;prefetch Files/data while running batch jobs
 
 
 ## 6. Release Planning:
@@ -73,11 +74,10 @@ Below is a description of the system components that are building blocks of the 
   
 -   Understand the prefetching interface.
   
--   Wite a Hive application.
   
 ### Sprint 2: 10/7 - 10/27
 
--   Run TPC-DS/TPC-H benchmarks, get into Spark and Hive code to generate the DAG, extract DAG information out of results,
+-   Run TPC-DS/TPC-H benchmarks, get into Spark code to generate the DAG, extract DAG information out of results,
   
 
 ### Sprint 3: 10/28 - 11/17
@@ -91,10 +91,6 @@ Below is a description of the system components that are building blocks of the 
 -   Analyze results
   
 -   Presentation
-
-## 7. Open Questions & Risks
-
-- How to find the DAG(dependencies) of batch jobs? This is the core issue of this project.
 
 
 
