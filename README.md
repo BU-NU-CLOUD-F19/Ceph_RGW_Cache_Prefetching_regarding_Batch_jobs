@@ -108,7 +108,6 @@ In this part we will describe how we implement the system and how to run the pro
   ```shell
   s3cmd --configure
   ```
-  
 - **Run Ceph**
 ```shell
 cd ceph/build/
