@@ -92,6 +92,30 @@ Below is a description of the system components that are building blocks of the 
 ## 7. Workflow
 
 In this part we will describe how we implement the system and how to run the project.
+### Ceph
+- **S3a**
+  - dnf(DNF Package Manager In CentOS) install
+  ```shell
+  yum install epel-release -y
+  
+  yum install dnf -y
+  ```
+  - s3cmd install
+  ```shell
+  dnf install s3cmd
+  ```
+  - s3a configuration
+  ```shell
+  s3cmd --configure
+  ```
+  
+- **Run Ceph**
+```shell
+cd ceph/build/
+
+sudo  MON=1 OSD=3 RGW=1 MGR=0 MDS=0 ../src/vstart.sh -n -d
+```
+
 
 ### Spark
 
@@ -110,6 +134,14 @@ In this part we will describe how we implement the system and how to run the pro
   You can see the whole tutorial from https://github.com/apache/spark
 
 - **Spark configurations**
+  - spark-defaults.conf in $SPARK_HOME/conf
+  ```yaml
+  spark.hadoop.fs.s3a.impl	org.apache.hadoop.fs.s3a.S3AFileSystem  
+
+  spark.hadoop.fs.s3a.access.key	s3a access key
+
+  spark.hadoop.fs.s3a.secret.key	s3a secret key
+  ```
 
 - **Upload input files to Ceph Machine**
 
