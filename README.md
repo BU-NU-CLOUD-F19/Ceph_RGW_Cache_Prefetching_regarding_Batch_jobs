@@ -52,18 +52,12 @@ Below is a description of the system components that are building blocks of the 
 
 ### Design Implications and Discussion:
 
-- Generate directed acyclic graph (DAG) by DAG Scheduler in Spark
-- Create software to perform the prediction of which data will be
-   accessed in the future based on DAG.
+- Modify the source codes of Spark to generate DAG before application actually starts running, 
+- Use POST request to send the DAG string to Kariz.
+- Transfer DAG string into Kariz graph class.
 - Use KARIZ that reducing the runtime the most by finding the critical path of the dag.
-- Two planners in KARIZ:
-  
-  A DAG planner that build prefered cache plans for a signle DAG at the submission time;
- 
-  A cache planner that make decisions for multiple DAG at runtime considering limited bandwidth and limited cache space. For each DAG, get the prefetching and caching plans for the their next stage considering their bandwidth share. 
-
-- Prefetch data by using prefetching commands (Ceph prefetching API) in
-     Ceph Rados Gateway (RGW) to improve the computing speed of batch jobs in Spark.
+- Find the longest path by Dijkstra and prefetch all the files along the path.
+- Prefetch data by Kariz prefetching module.
 - Performance test: Comparing efficiency (running time) of batch jobs between with/without prefetching the data. 
 
 ## 5. Acceptance Criteria
