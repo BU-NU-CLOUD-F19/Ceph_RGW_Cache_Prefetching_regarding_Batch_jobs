@@ -65,8 +65,7 @@ Below is a description of the system components that are building blocks of the 
 - The MVP is have a system end-to-end test: extract DAG out of Spark Applications; find the job dependency path; generate cache planner 
 ;prefetch Files/data while running batch jobs
 
-
-## 6. Release Planning:
+## 6. Release Planning
 
 ### Sprint 1: 9/16 - 10/6 
 
@@ -87,10 +86,48 @@ Below is a description of the system components that are building blocks of the 
 ### Sprint 4: 11/18 - 12/2
 
 -   Performance tests
-  
 -   Analyze results
-  
 -   Presentation
+
+## 7. Work Flow
+
+In this part we will describe how we implement the system and how to run the project.
+
+### Spark
+
+- **Download**
+
+  - Download the Spark source code we have modified, you can see them in the Spark branch.
+
+- **Compile the source code** 
+
+  - Using maven build to compile the source code as in the following command
+
+  ```
+  ./build/mvn -DskipTests clean package
+  ```
+
+  You can see the whole tutorial from https://github.com/apache/spark
+
+- **Spark configurations**
+
+- **Upload input files to Ceph Machine**
+
+  - cd to Spark folders and run the following cammand. You can change the name of input files by modifying *./input*
+
+  ```shell
+  python3 ceph_init.py ./input
+  ```
+
+- **Run Spark Application**
+
+  - In the Spark folder, run the following command
+
+  ```shell
+  ./bin/spark-submit ceph_test.py s3a://test1
+  ```
+
+  
 
 
 
