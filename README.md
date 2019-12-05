@@ -9,6 +9,9 @@
 
 [Sprint 5 presentation](https://drive.google.com/open?id=1iN-gZnn5MLgFggXmeUB45YmFmqarpcOAsKt2gkvPSZI)
 
+[Final Video presentation](https://drive.google.com/a/bu.edu/file/d/1xxrbolo_70cQ4eJZPNyoocUccrJN1FmX/view?usp=sharing)
+
+
 ## 1. Vision and Goals Of The Project:
 
 Nowadays, due to the large amount of data, big data analysis is frequently used in industrial, spark is one of the most popular platforms. 
