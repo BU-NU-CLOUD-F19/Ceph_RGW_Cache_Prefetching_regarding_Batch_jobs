@@ -187,7 +187,7 @@ In this part we will describe how we implement the system and how to run the pro
     "type": "rgw",
     "mfa_ids": []
 }
-```
+  
   - Modify corresponding config file /home/centos/ceph-prefetching/Kariz/code/d3n/d3n_cfg.py with right d3n port and d3n key (secret key in swift key)
   
 - **Run Kariz server**
