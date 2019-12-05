@@ -141,7 +141,7 @@ In this part we will describe how we implement the system and how to run the pro
   - run create subuser command: sudo ./bin/radosgw-admin subuser create --uid=<user id, eg: jay> --subuser=jay:swift --access=full
   - After doing this, user can get a json format String in the terminal: 
   ```yaml
-  "user_id": "testuser3",
+  {"user_id": "testuser3",
     "display_name": "Cloud",
     "email": "",
     "suspended": 0,
@@ -185,8 +185,7 @@ In this part we will describe how we implement the system and how to run the pro
     },
     "temp_url_keys": [],
     "type": "rgw",
-    "mfa_ids": []
-}
+    "mfa_ids": []}
   
   - Modify corresponding config file /home/centos/ceph-prefetching/Kariz/code/d3n/d3n_cfg.py with right d3n port and d3n key (secret key in swift key)
   
