@@ -66,8 +66,8 @@ Below is a description of the system components that are building blocks of the 
 ## 5. Acceptance Criteria
 
  The MVP is have a system end-to-end test: 
-- extract DAG out of Spark Applications to find the job dependency path; 
-- generate cache planner and prefetch Files/data before running batch jobs
+- Extract DAG out of Spark Applications to find the job dependency path.
+- Generate cache planner and prefetch files/data before actually running batch jobs.
 
 ## 6. Release Planning
 
