@@ -1,0 +1,279 @@
+# the source code is modified version of flask-connexion-rest from realpython.com
+# Author: realpython.com, Mania Abdi
+
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with KARIZ distributed cache
+  version: "1.0.0"
+  title: KARIZ Rest API
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: /cache
+
+# Paths supported by the server application
+paths:
+  /statistics:
+    post:
+      operationId: daemon.statistics
+      tags:
+        - KARIZ
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
+      parameters:
+        - name: stats
+          in: body
+          description: Person to create
+          required: True
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successfully created person in list
+
+  /status:
+    get:
+      operationId: daemon.cache_status
+      tags:
+        - KARIZ
+      summary: Return the cache metadata
+      description: Read the entire metadata of all caches and return it
+      responses:
+        200:
+          description: Successfully read metadata
+          schema:
+            type: array
+            items:
+              properties:
+                file_name:
+                  type: string
+                  description: file name
+                size:
+                  type: integer
+                  description: size of the file
+                meta:
+                  type: array
+                  items:
+                    properties:
+                      pin:
+                        type: integer
+                        description: Whether pinned or not
+                      sharescore:
+                        type: integer
+                        description: number of accesses to this file
+                      timestamp:
+                        type: string
+                        description: last access time
+  /iscached:
+    post:
+      operationId: daemon.is_plancached
+      tags:
+        - KARIZ
+      summary: Check whether a file is cached or not 
+      description: Check whether a file is cached or not
+      parameters:
+        - name: data
+          in: body
+          description: Stage in execution
+          required: True
+          schema:
+            type: object
+            
+      responses:
+        201:
+          description: Successfully checked whether a file is cached or not
+          schema:
+            properties:
+              cached:
+                type: integer
+                description: return whether the plan is cached or not
+  
+  /cacheplan:
+    post:
+      operationId: daemon.cache_plan
+      tags:
+        - KARIZ
+      summary: Try to cache a plan 
+      description: Try to cache a plan
+      parameters:
+        - name: data
+          in: body
+          description: Plan information
+          required: True
+          schema:
+            type: object
+            
+      responses:
+        201:
+          description: Successfully tried to cached a plan in the cache
+          schema:
+            properties:
+              cached:
+                type: integer
+                description: return whether the plan is cached or not
+
+  /prefetchplan:
+    post:
+      operationId: daemon.prefetch_plan
+      tags:
+        - KARIZ
+      summary: Try to prefetch a plan 
+      description: Try to prefetch a plan
+      parameters:
+        - name: data
+          in: body
+          description: Plan information
+          required: True
+          schema:
+            type: object
+            
+      responses:
+        201:
+          description: Successfully tried to prefetch a plan in the cache
+          schema:
+            properties:
+              cached:
+                type: integer
+                description: return whether the plan is cached or not
+
+  /cachemrd:
+    post:
+      operationId: daemon.cache_mrd
+      tags:
+        - KARIZ
+      summary: Try to cache a plan 
+      description: Try to cache a plan
+      parameters:
+        - name: data
+          in: body
+          description: Plan information
+          required: True
+          schema:
+            type: object
+            
+      responses:
+        201:
+          description: Successfully tried to cached a plan in the cache
+          schema:
+            properties:
+              cached:
+                type: object
+                description: return whether the plan is cached or not
+
+  /prefetchmrd:
+    post:
+      operationId: daemon.prefetch_mrd
+      tags:
+        - KARIZ
+      summary: Try to prefetch a plan 
+      description: Try to prefetch a plan
+      parameters:
+        - name: data
+          in: body
+          description: Plan information
+          required: True
+          schema:
+            type: object
+            
+      responses:
+        201:
+          description: Successfully tried to prefetch a plan in the cache
+          schema:
+            properties:
+              cached:
+                type: integer
+                description: return whether the plan is cached or not
+        
+
+  /cachefile:
+    post:
+      operationId: daemon.cache_file
+      tags:
+        - KARIZ
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
+      parameters:
+        - name: file
+          in: body
+          description: Stage in execution
+          required: True
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successfully created person in list
+
+  /pinfile:
+    post:
+      operationId: daemon.pin_file
+      tags:
+        - KARIZ
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
+      parameters:
+        - name: new_stage
+          in: body
+          description: Stage in execution
+          required: True
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successfully created person in list
+          
+  /unpinfiles:
+    post:
+      operationId: daemon.unpin_files
+      tags:
+        - KARIZ
+      summary: Try to prefetch a plan
+      description: Try to prefetch a plan
+      parameters:
+        - name: plan
+          in: body
+          description: Plan information
+          required: True
+          schema:
+            type: object
+
+      responses:
+        201:
+          description: Successfully tried to prefetch a plan in the cache
+          schema:
+            properties:
+              cached:
+                type: integer
+                description: return whether the plan is cached or not
+
+
+  /evictfile:
+    post:
+      operationId: daemon.evict_file
+      tags:
+        - KARIZ
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
+      parameters:
+        - name: new_stage
+          in: body
+          description: Stage in execution
+          required: True
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successfully created person in list
+
+  /clearcache:
+    post:
+      operationId: daemon.clear_cache
+      tags:
+        - KARIZ
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
+      responses:
+        201:
+          description: Successfully created person in list
+  

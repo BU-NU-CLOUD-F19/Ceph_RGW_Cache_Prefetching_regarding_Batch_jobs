@@ -1,0 +1,47 @@
+dag_id,data,mse_factor,name,stage_id
+5628d81e-f6c2-11e9-a61d-340286a22b19,{'a2': {'size': 160}},0,graph,0
+dag_id,data,mse_factor,name,stage_id
+4579d128-f6c5-11e9-a61d-340286a22b19,{'a2': {'size': 160}},0,graph,0
+4579d128-f6c5-11e9-a61d-340286a22b19,{'c23': {'size': 400}},0,graph,1
+4579d128-f6c5-11e9-a61d-340286a22b19,{'b16': {'size': 300}},0,graph,2
+4579d128-f6c5-11e9-a61d-340286a22b19,{'b16': {'size': 300}},0,graph,2
+4579d128-f6c5-11e9-a61d-340286a22b19,{'d6': {'size': 300}},0,graph,3
+4579d128-f6c5-11e9-a61d-340286a22b19,{'d6': {'size': 300}},0,graph,3
+dag_id,data,mse_factor,name,stage_id
+299f0436-f6c6-11e9-a61d-340286a22b19,{'a2': {'size': 160}},0,graph,0
+299f0436-f6c6-11e9-a61d-340286a22b19,{'c23': {'size': 400}},0,graph,1
+299f0436-f6c6-11e9-a61d-340286a22b19,{'b16': {'size': 300}},0,graph,2
+299f0436-f6c6-11e9-a61d-340286a22b19,{'b16': {'size': 300}},0,graph,2
+299f0436-f6c6-11e9-a61d-340286a22b19,{'d6': {'size': 300}},0,graph,3
+dag_id,data,mse_factor,name,stage_id
+2dbb7d82-f6c7-11e9-a61d-340286a22b19,{'a2': {'size': 160}},0,graph,0
+2dbb7d82-f6c7-11e9-a61d-340286a22b19,{'c23': {'size': 400}},0,graph,1
+2dbb7d82-f6c7-11e9-a61d-340286a22b19,{'b16': {'size': 300}},0,graph,2
+2dbb7d82-f6c7-11e9-a61d-340286a22b19,{'b16': {'size': 300}},0,graph,2
+2dbb7d82-f6c7-11e9-a61d-340286a22b19,{'d6': {'size': 300}},0,graph,3
+dag_id,data,mse_factor,name,stage_id
+6b4f36ce-f6cd-11e9-a61d-340286a22b19,{'a2': {'size': 160}},0,graph,0
+6b4f36ce-f6cd-11e9-a61d-340286a22b19,{'c23': {'size': 400}},0,graph,1
+6b4f36ce-f6cd-11e9-a61d-340286a22b19,{'b16': {'size': 300}},0,graph,2
+6b4f36ce-f6cd-11e9-a61d-340286a22b19,{'b16': {'size': 300}},0,graph,2
+6b4f36ce-f6cd-11e9-a61d-340286a22b19,{'d6': {'size': 300}},0,graph,3
+6b4f36ce-f6cd-11e9-a61d-340286a22b19,{'d6': {'size': 300}},0,graph,3
+dag_id,data,mse_factor,name,stage_id
+8d26af3c-f724-11e9-a61d-340286a22b19,{'a2': {'size': 160}},0,graph,0
+8d26af3c-f724-11e9-a61d-340286a22b19,{'c23': {'size': 400}},0,graph,1
+8d26af3c-f724-11e9-a61d-340286a22b19,{'b16': {'size': 300}},0,graph,2
+8d26af3c-f724-11e9-a61d-340286a22b19,{'b16': {'size': 300}},0,graph,2
+8d26af3c-f724-11e9-a61d-340286a22b19,{'d6': {'size': 300}},0,graph,3
+
+dag_id,data,mse_factor,name,stage_id
+404b610e-f77f-11e9-a61e-340286a22b19,{'c26': {'size': 40}},0,graph,0
+404b610e-f77f-11e9-a61e-340286a22b19,"{'f': {'size': 90}, 'c26': {'size': 160}}",0,graph,0
+404b610e-f77f-11e9-a61e-340286a22b19,"{'d21': {'size': 160}, 'f': {'size': 150}, 'c26': {'size': 240}}",0,graph,0
+dag_id,data,mse_factor,name,stage_id
+3f574a6e-f780-11e9-a61e-340286a22b19,{'c26': {'size': 40}},0,graph,0
+3f574a6e-f780-11e9-a61e-340286a22b19,"{'f': {'size': 90}, 'c26': {'size': 160}}",0,graph,0
+3f574a6e-f780-11e9-a61e-340286a22b19,"{'d21': {'size': 160}, 'f': {'size': 150}, 'c26': {'size': 240}}",0,graph,0
+dag_id,data,mse_factor,name,stage_id
+7fc9aa7e-f81b-11e9-a622-340286a22b19,{'c26': {'size': 40}},0,graph,0
+7fc9aa7e-f81b-11e9-a622-340286a22b19,"{'f': {'size': 90}, 'c26': {'size': 160}}",0,graph,0
+

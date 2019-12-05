@@ -1,0 +1,86 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - text/plain
+produces:
+  - text/plain
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /statistics:
+    post:
+      operationId: daemon.notify_collector
+      tags:
+        - People
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
+      parameters:
+        - name: stats
+          in: body
+          description: Person to create
+          required: True
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successfully created person in list
+
+  /newdag:
+    post:
+      operationId: daemon.notify_mirab
+      tags:
+        - DAG
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
+      parameters:
+        - name: new_dag
+          in: body
+          description: Stage in execution
+          required: True
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successfully created person in list
+
+  /newstage:
+    post:
+      operationId: daemon.notify_planner
+      tags:
+        - People
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
+      parameters:
+        - name: new_stage
+          in: body
+          description: Stage in execution
+          required: True
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successfully created person in list
+
+  /completed:
+    post:
+      operationId: daemon.notify_completed
+      tags:
+        - People
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
+      parameters:
+        - name: dagstr
+          in: body
+          description: Stage in execution
+          required: True
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successfully created person in list
+ 
