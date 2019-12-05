@@ -11,21 +11,14 @@
 
 ## 1. Vision and Goals Of The Project:
 
-- **Spark** is a high-performance open source data processing engine that can perform batch processing. 
+Nowadays, due to the large amount of data, big data analysis is frequently used in industrial, spark is one of the most popular platforms. 
+**Spark** is a distributed, data processing engine for batch and streaming modes featuring SQL queries, graph processing, and machine learning. A Spark task will be compiled into an execution plan with multiple parallel batch jobs. And a direct acyclic graph of job dependencies, which is called **DAG**, will be generated. Jobs are scheduled in parallel, with the constraint set by the DAG.
 
-- **Hive** is is a data warehouse framework for querying and analysis of data that is stored in HDFS.
-
-- **DAG** (Directed Acyclic Graph)[ ](http://data-flair.training/blogs/apache-spark-tutorial/)is a set of Vertices and Edges, where vertices represent the RDDs(Resilient Distributed Dataset, a fundamental data structure in Spark) and the edges represent the Operation to be applied on RDD.
-
-  ![DAG](https://github.com/BU-NU-CLOUD-F19/Ceph_RGW_Cache_Prefetching_regarding_Batch_jobs/blob/master/doc/DAG.jpg)
-
-- **Ceph** is an open source storage platform, which implements object storage on a single distributed computer cluster, and provides interfaces for object-, block- and file-level storage. 
-
-- **RGW**(RADOS Gateway) is an object storage interface built on top of OSDs(Ceph Distributed Storage) to provide applications with the location of data in clusters.
+Data are stored in object store clusters, which is Ceph in this project. **Ceph** is a free-software storage platform, implements object storage on a single distributed computer cluster. **RGW**(RADOS Gateway) is a Ceph provided interface. Inside of Ceph, cache is a reusable storage area that provide high read/write speed.
 
 ### Goal of this project
 
-When developer using Spark to deal with batch jobs, the jobs are done in sequence which means one job cannot start until all of its dependencies are done. We want to establish a mechanism to extract the dependencies and prefetch the data from Ceph RGW into cache beforehand so that the overall runtime can be speed up.
+When a job read the data in object storage, the data would be fetched into the cache so that data accessing time would be reduced if future jobs use the same data. If we can find information about which data/file will be accessed in the future, we can prefetch the data from low speed hard disk to the high speed cache in advance so that the whole work flow can be accelerated.
 
 ## 2. Users/Personas Of The Project:
 
