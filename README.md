@@ -9,7 +9,7 @@
 
 [Sprint 5 presentation](https://drive.google.com/open?id=1iN-gZnn5MLgFggXmeUB45YmFmqarpcOAsKt2gkvPSZI)
 
-[Final Video presentation](https://drive.google.com/a/bu.edu/file/d/1xxrbolo_70cQ4eJZPNyoocUccrJN1FmX/view?usp=sharing)
+[Final Video presentation](https://youtu.be/ndZXDp25AF4)
 
 
 ## 1. Vision and Goals Of The Project:
